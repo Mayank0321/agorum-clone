@@ -7,6 +7,12 @@ export default {
         height: "height",
         spacing: "margin, padding",
       },
+      colors: {
+        customGray: "#1c1c1c",
+      },
+    },
+    fontFamily: {
+      sans: "Helvetica, Arial, sans-serif",
     },
   },
   plugins: [],

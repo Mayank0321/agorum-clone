@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMagnifyingGlass,
-  faUser,
-  faCalendar,
-  faMessage,
-} from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
+import calendar from "../assets/calendar.svg";
+import search from "../assets/search-white-icon.svg";
+import message from "../assets/message-button.svg";
+import profile from "../assets/profile-icon.svg";
 const Footer = () => {
   const [modal, setModal] = useState(false);
   const openModal = () => {
@@ -17,28 +14,26 @@ const Footer = () => {
   };
   return (
     <footer className="flex justify-center bg-none items-center text-center text-black p-4 sticky bottom-0">
-      <FontAwesomeIcon
-        className="bg-slate-800 mr-5 text-white p-4 rounded-full cursor-pointer"
-        icon={faCalendar}
+      <div
         onClick={openModal}
-      />
-      <div className="mr-5 bg-slate-800 rounded-full">
-        <FontAwesomeIcon
-          className=" text-white p-4 cursor-pointer"
-          icon={faUser}
-          onClick={openModal}
-        />
-        <FontAwesomeIcon
-          className=" text-white p-4 cursor-pointer"
-          icon={faMagnifyingGlass}
-          onClick={openModal}
-        />
+        className="bg-customGray mr-3 text-white p-4 rounded-full cursor-pointer"
+      >
+        <img src={calendar} alt="" />
       </div>
-      <FontAwesomeIcon
-        className="bg-slate-800 text-white p-4 rounded-full cursor-pointer"
-        icon={faMessage}
+      <div className="flex mr-3 bg-customGray px-1 rounded-full">
+        <span onClick={openModal} className="text-white p-4 cursor-pointer">
+          <img src={profile} alt="" />
+        </span>
+        <span onClick={openModal} className=" text-white p-4 cursor-pointer">
+          <img src={search} alt="" />
+        </span>
+      </div>
+      <div
         onClick={openModal}
-      />
+        className="bg-customGray text-white p-4 rounded-full cursor-pointer"
+      >
+        <img src={message} alt="" />
+      </div>
       {modal && <Modal closeModal={closeModal} />}
     </footer>
   );

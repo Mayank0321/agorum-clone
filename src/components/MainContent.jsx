@@ -19,37 +19,42 @@ const MainContent = () => {
       .catch(Error);
   }, []);
   return (
-    <main className="flex-grow p-6">
+    <main className="flex-grow p-4 pt-1">
       {loading ? (
         <LoaderComponent />
       ) : (
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 1, 750: 2, 800: 3, 850: 4, 900: 5 }}
         >
-          <Masonry columnsCount={5} gutter="25px">
+          <Masonry columnsCount={5} gutter="12px">
             {posts.map((p) => (
               <div
-                className="transition ease-out hover:scale-105 hover: cursor-pointer delay-100"
+                className="transition-all duration-300 ease-out hover:scale-105 hover:mb-5 group"
                 key={p.userId}
               >
                 <img
-                  className="border rounded-xl hover:shadow-lg"
+                  className="border shadow-xl rounded-xl group-hover:shadow-xl group-hover: cursor-pointer"
                   src={`${p.url}`}
                   alt="disp-image"
                 />
-                <span className="flex hover:border hover:shadow-lg rounded-xl">
-                  <img
-                    className="border rounded-full"
-                    src={`${p.url}`}
-                    width={20}
-                    height={20}
-                    alt="Profile"
-                  />
-                  <p className="ml-5">
-                    {p.listingSlugs === "photography" ? "Photographer" : ""}
-                  </p>
-                </span>
-                <p className="ml-5 hover:border hover:shadow-lg rounded-xl">
+                <div className="flex relative justify-between mt-2 group-hover: cursor-pointer  group-hover:shadow-md group-hover:group-hover:shadow-current rounded-xl">
+                  <span className="flex justify-between">
+                    <img
+                      className="h-5 w-5 group-hover:mx-1 group-hover:my-0.5 transition-all duration-300 rounded-xl"
+                      src={`${p.user.profilePicture}`}
+                      width={20}
+                      height={20}
+                      alt="Profile"
+                    />
+                    <p className="absolute left-9 transition-all duration-300">
+                      {p.listingSlugs === "photography" ? "Photographer" : ""}
+                    </p>
+                  </span>
+                  <span className="group-hover:pr-2 transition-all duration-300">
+                    ⋮
+                  </span>
+                </div>
+                <p className="ml-7 px-2 group-hover:shadow-current group-hover:mt-2 rounded-xl group-hover: cursor-pointer group-hover:shadow-lg group-hover:inline-block">
                   $ {p.price + " " + p.payUnit}
                 </p>
               </div>
