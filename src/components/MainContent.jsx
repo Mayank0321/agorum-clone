@@ -29,15 +29,15 @@ const MainContent = () => {
           <Masonry columnsCount={5} gutter="12px">
             {posts.map((p) => (
               <div
-                className="transition-all duration-300 ease-out hover:scale-105 hover:mb-5 group"
+                className="transition-transform duration-300 ease-in-out hover:scale-101 hover:mb-5 group"
                 key={p.userId}
               >
                 <img
-                  className="border shadow-xl rounded-xl group-hover:shadow-xl group-hover: cursor-pointer"
+                  className="border shadow-md rounded-xl group-hover:shadow-custom group-hover: cursor-pointer"
                   src={`${p.url}`}
                   alt="disp-image"
                 />
-                <div className="flex relative justify-between mt-2 group-hover: cursor-pointer  group-hover:shadow-md group-hover:group-hover:shadow-current rounded-xl">
+                <div className="flex relative justify-between mt-2 group-hover: cursor-pointer  group-hover:shadow-custom rounded-xl">
                   <span className="flex justify-between">
                     <img
                       className="h-5 w-5 group-hover:mx-1 group-hover:my-0.5 transition-all duration-300 rounded-xl"
@@ -54,7 +54,7 @@ const MainContent = () => {
                     ⋮
                   </span>
                 </div>
-                <p className="ml-7 px-2 group-hover:shadow-current group-hover:mt-2 rounded-xl group-hover: cursor-pointer group-hover:shadow-lg group-hover:inline-block">
+                <p className="ml-7 px-2 t group-hover:mt-2 rounded-xl group-hover: cursor-pointer group-hover:shadow-custom group-hover:inline-block">
                   $ {p.price + " " + p.payUnit}
                 </p>
               </div>
