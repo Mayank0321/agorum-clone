@@ -73,12 +73,15 @@ const Modal = ({ closeModal }) => {
               What is Agorum?
             </p>
             <div className="flex items-center justify-center">
-              <a href="#" className="block">
+              <a href="https://www.agorum.co/privacy-policy" className="block">
                 Privacy Policy
               </a>
               &nbsp;
               <p>&</p>&nbsp;
-              <a href="#" className="block">
+              <a
+                href="https://www.agorum.co/terms-of-service"
+                className="block"
+              >
                 Terms of Service
               </a>
             </div>
