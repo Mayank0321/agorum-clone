@@ -33,7 +33,7 @@ const MainContent = () => {
                 key={p.userId}
               >
                 <img
-                  className="border shadow-md rounded-xl group-hover:shadow-custom group-hover: cursor-pointer"
+                  className="border shadow-md rounded-2xl group-hover:shadow-custom group-hover: cursor-pointer"
                   src={`${p.url}`}
                   alt="disp-image"
                 />
